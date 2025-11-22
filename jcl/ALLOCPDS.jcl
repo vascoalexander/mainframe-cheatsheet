@@ -1,0 +1,6 @@
+//ALLOC   EXEC PGM=IEFBR14
+//DD1     DD DSN=MYHLQ.COBOL.SOURCE,
+//           DISP=(NEW,CATLG),
+//           SPACE=(TRK,(10,5,10)),
+//           DCB=(RECFM=FB,LRECL=80,BLKSIZE=27920),
+//           UNIT=SYSDA
