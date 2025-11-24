@@ -1,33 +1,40 @@
 ## ISPF Panel / System Commands
 
-| **Command**      | **Beschreibung**                                        |
-| ---------------- | ------------------------------------------------------- |
-| **TSO**          | Führt TSO-Befehle aus (`TSO LISTA`, `TSO ALLOC`, …).    |
-| **ISPF**         | Startet ISPF.                                           |
-| **END**          | Verlässt aktuelles Panel / kehrt zurück.                |
-| **RETURN**       | Kehrt direkt zur vorherigen Bereichsebene zurück.       |
-| **EXIT**         | Verlässt ISPF vollständig.                              |
-| **HELP**         | Öffnet Hilfefenster.                                    |
-| **UP / DOWN**    | Scrollt im Panel/Listings.                              |
-| **LEFT / RIGHT** | Horizontales Scrollen.                                  |
-| **HOME**         | Cursor auf erste Position.                              |
-| **PF1–PF24**     | Standard-Funktionstasten für Scrolling, Hilfe, Befehle. |
-| **DSLIST**       | Öffnet Dataset-Liste (Option 3.4).                      |
-| **LISTCAT**      | Zeigt Katalogeinträge an (TSO LISTCAT).                 |
-| **RENAME**       | Benennt Dataset im 3.2-Menü um.                         |
-| **DELETE**       | Löscht Dataset im 3.2-Menü mit Bestätigung.             |
-| **COPY**         | Kopiert Dataset/Member (ISPF Utility 3.3).              |
-| **MOVE**         | Verschiebt Dataset/Member.                              |
-| **BROWSE**       | Öffnet Dataset im Lesemodus.                            |
-| **EDIT**         | Öffnet Dataset im Editmodus.                            |
-| **VIEW**         | Öffnet Dataset schreibgeschützt.                        |
-| **ALLOC**        | TSO Allocate – erstellt Datasets.                       |
-| **FREE**         | TSO Free – gibt DD-Namen frei.                          |
-| **SUBMIT**       | Job absetzen: `SUBMIT 'DSN(JCL)'`.                      |
-| **PRINT**        | Druckt Dataset über Spool.                              |
-| **SDSF**         | Öffnet SDSF (JES2/3 Job Monitoring).                    |
-| **OMVS**         | Startet UNIX-Shell (z/OS UNIX).                         |
-| **ISPVCALL**     | Aufruf von Visual ISPF Panels.                          |
+| **Command / Aktion**           | **Syntax / Shortcut**          | **Beschreibung**                                               |
+| ------------------------------ | ------------------------------ | -------------------------------------------------------------- |
+| **TSO-Befehl ausführen**       | `TSO <cmd>`                    | Führt TSO-Kommandos aus (ALLOC, LISTCAT, PROFILE, FREE, etc.). |
+| **ISPF starten**               | `ISPF`                         | Startet die ISPF-Umgebung.                                     |
+| **END (Panel verlassen)**      | `END`, `PF3`                   | Geht ein Panel zurück.                                         |
+| **RETURN (Bereich verlassen)** | `RETURN`                       | Springt auf obere Ebene des aktuellen Bereichs.                |
+| **EXIT (ISPF verlassen)**      | `EXIT`, `PF3` mehrfach         | Beendet ISPF vollständig.                                      |
+| **HELP**                       | `HELP`, `PF1`                  | Öffnet kontextbezogene Hilfe.                                  |
+| **Scrollen: Down**             | `DOWN`, `PF8`                  | Eine Seite nach unten.                                         |
+| **Scrollen: Up**               | `UP`, `PF7`                    | Eine Seite nach oben.                                          |
+| **Scrollen: Left**             | `LEFT`, `PF10`                 | Horizontal nach links.                                         |
+| **Scrollen: Right**            | `RIGHT`, `PF11`                | Horizontal nach rechts.                                        |
+| **Home Position**              | `HOME`, `PF4` (je nach System) | Cursor an Zeilenanfang.                                        |
+| **DSLIST öffnen**              | `3.4` oder `DSLIST`            | Datasetliste anzeigen.                                         |
+| **Dataset: Edit**              | `E` (auf Zeile)                | Öffnet Member/Dataset im Editor.                               |
+| **Dataset: Browse**            | `B`                            | Öffnet im Nur-Lese-Modus.                                      |
+| **Dataset: View**              | `V`                            | Öffnet Dataset schreibgeschützt.                               |
+| **Dataset: Copy**              | `C`                            | Kopiert Dataset/Member (innerhalb DSLIST).                     |
+| **Dataset: Move**              | `M`                            | Verschiebt Dataset/Member.                                     |
+| **Dataset: Rename**            | `R`                            | Benennt Dataset/Member um.                                     |
+| **Dataset: Delete**            | `D`                            | Löscht Dataset/Member (mit Bestätigung).                       |
+| **Dataset: Create (ALLOC)**    | `A` oder `TSO ALLOC`           | Erstellt/Allokiert ein neues Dataset.                          |
+| **Dataset-Informationen**      | `I`                            | Zeigt Dataset-Attribute an.                                    |
+| **Member-Liste (in PDS)**      | `S` auf dem Dataset            | Listet Member auf.                                             |
+| **Submit JCL**                 | `SUBMIT` / `SUB 'ds(member)'`  | Sendet Job an JES.                                             |
+| **SDSF öffnen**                | `SDSF`                         | Job-Monitoring, JES-Ausgaben.                                  |
+| **OMVS starten**               | `OMVS`                         | Öffnet z/OS UNIX Shell.                                        |
+| **COPY Utility**               | `3.3`                          | ISPF Copy Utility (Datensätze kopieren).                       |
+| **MOVE Utility**               | `3.3 M`                        | Datensätze verschieben.                                        |
+| **RENAME Utility**             | `3.2 R`                        | Dataset umbenennen.                                            |
+| **DELETE Utility**             | `3.2 D`                        | Dataset löschen.                                               |
+| **LISTCAT**                    | `TSO LISTCAT`                  | Zeigt Kataloginformationen.                                    |
+| **PRINT Dataset**              | `PRINT`                        | Sendet Dataset an definierten Drucker/Spool.                   |
+| **RECFM/DSORG anzeigen**       | `TSO LISTDSI`                  | Details zum Dataset.                                           |
+| **ISPVCALL**                   | `ISPVCALL PANEL(pname)`        | Ruft Visual/Custom-Panel auf.                                  |
 
 ## ISPF Editor Commands – Übersichtstabelle
 
